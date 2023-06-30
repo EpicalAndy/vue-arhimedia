@@ -1,10 +1,30 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-
+import AppHeaderView from '@/views/AppHeaderView.vue'
+import AppArticleView from '@/views/AppArticleView.vue'
 </script>
 
 <template>
-  <RouterView />
+  <v-layout>
+    <v-container class="mb-12">
+      <app-header-view></app-header-view>
+    </v-container>
+    <v-main>
+      <v-container class="mb-12">
+
+
+        <RouterView/>
+
+        <v-col cols="4">
+          <app-article-view></app-article-view>
+        </v-col>
+
+      </v-container>
+
+    </v-main>
+
+
+  </v-layout>
 </template>
 
 <style scoped>

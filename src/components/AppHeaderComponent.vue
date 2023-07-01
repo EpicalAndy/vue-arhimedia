@@ -1,22 +1,24 @@
 <template>
-  <v-app-bar>
+  <v-app-bar
+      density="comfortable"
+      image="/images/header-bg.jpg"
+      height="200">
 
+    <template v-slot:extension>
+      <v-tabs align-tabs="start"
+              v-model="tab"
+              bg-color="blue"
+              class="w-100">
 
-<!--        <v-img src="/src/assets/images/logo.png">
+        <v-tab value="main" to="/">Главная</v-tab>
+        <v-tab value="about">О проекте</v-tab>
+        <v-tab value="news">Новости</v-tab>
+        <v-tab value="article">Статьи</v-tab>
+        <v-tab value="projects">Наши проекты</v-tab>
+        <v-tab value="contacts" to="contacts">Контакты</v-tab>
 
-        </v-img>-->
-        <v-tabs
-            align-tabs="start"
-            v-model="tab"
-            bg-color="primary"
-            grow="auto">
-          <v-tab value="main">Главная</v-tab>
-          <v-tab value="news">Новости</v-tab>
-          <v-tab value="services">Услуги</v-tab>
-          <v-tab value="portfolio">Портфолио</v-tab>
-          <v-tab value="contacts">Контакты</v-tab>
-        </v-tabs>
-
+      </v-tabs>
+    </template>
 
   </v-app-bar>
 

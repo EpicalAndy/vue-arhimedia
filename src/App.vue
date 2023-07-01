@@ -1,28 +1,28 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView, useRoute } from 'vue-router'
 import AppHeaderView from '@/views/AppHeaderView.vue'
 import AppArticleView from '@/views/AppArticleView.vue'
 </script>
 
 <template>
   <v-layout>
+
     <v-container class="mb-12">
       <app-header-view></app-header-view>
     </v-container>
+
     <v-main>
       <v-container class="mb-12">
 
-
-        <RouterView/>
-
-        <v-col cols="4">
-          <app-article-view></app-article-view>
-        </v-col>
+        <RouterView v-slot="{ Component, route}">
+          <transition name="fade" mode="out-in">
+            <component :is="Component" ></component>
+          </transition>
+        </RouterView>
 
       </v-container>
 
     </v-main>
-
 
   </v-layout>
 </template>
@@ -88,5 +88,15 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

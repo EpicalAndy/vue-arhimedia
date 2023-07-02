@@ -2,14 +2,19 @@
   <v-card
       class="w-100 mt-0"
   >
-    <v-card-title>Посты</v-card-title>
-    <v-list lines="three">
-      <v-list-item v-for="item in postItems"
-                   :key="item.id"
-                   :title="item.title"
-                   :subtitle="item.content">
+    <v-list lines="three"
+            :items="postItems">
+      <v-list-subheader>Посты</v-list-subheader>
 
-      </v-list-item>
+      <template v-for="(item, index) in postItems" :key="item.id">
+        <v-divider v-if="index"></v-divider>
+
+        <v-list-item>
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <v-list-item-subtitle>{{ item.content }}</v-list-item-subtitle>
+        </v-list-item>
+      </template>
+
     </v-list>
   </v-card>
 </template>

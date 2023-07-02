@@ -5,18 +5,16 @@ import AppArticleView from '@/views/AppArticleView.vue'
 </script>
 
 <template>
-  <v-layout>
+  <v-app>
 
-    <v-container class="mb-12">
-      <app-header-view></app-header-view>
-    </v-container>
+    <app-header-view></app-header-view>
 
-    <v-main>
-      <v-container class="mb-12">
+    <v-main class="mt-0  fill-height">
+      <v-container class="w-100">
 
         <RouterView v-slot="{ Component, route}">
           <transition name="fade" mode="out-in">
-            <component :is="Component" ></component>
+            <component :is="Component"></component>
           </transition>
         </RouterView>
 
@@ -24,72 +22,10 @@ import AppArticleView from '@/views/AppArticleView.vue'
 
     </v-main>
 
-  </v-layout>
+  </v-app>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;

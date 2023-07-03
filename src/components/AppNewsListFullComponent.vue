@@ -33,7 +33,7 @@ const dates = useDate();
 
 const newsByDate = computed(() => {
   return newsItems.sort((a, b) => b.date -a.date);
-})
+});
 </script>
 
 <style scoped>

@@ -3,10 +3,10 @@
       class="w-100 mt-0"
   >
     <v-list lines="three"
-            :items="newsItems">
+            :items="newsByDate">
       <v-list-subheader>Новости</v-list-subheader>
 
-      <template v-for="(item, index) in newsItems" :key="item.id">
+      <template v-for="(item, index) in newsByDate" :key="item.id">
         <v-divider v-if="index"></v-divider>
 
         <v-list-item>
@@ -25,11 +25,15 @@
 <script setup lang="ts">
 import news from '@/demo/news.json'
 import type { News } from "@/models/news";
-import moment from "moment";
 import { useDate } from "@/composable/AppDateComposble";
+import { computed } from "vue";
 
 const newsItems = news as News[];
 const dates = useDate();
+
+const newsByDate = computed(() => {
+  return newsItems.sort((a, b) => b.date -a.date);
+})
 </script>
 
 <style scoped>

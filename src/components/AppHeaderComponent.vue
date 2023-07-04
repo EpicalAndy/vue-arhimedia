@@ -3,6 +3,9 @@
       density="comfortable"
       image="/images/header-bg.jpg"
       height="200">
+<!--    <v-app-bar-title class="text-yellow text-h1">
+     Архиремонт
+    </v-app-bar-title>-->
 
     <template v-slot:extension>
       <v-tabs align-tabs="start"
@@ -32,5 +35,8 @@ const tab = ref(null);
 </script>
 
 <style scoped>
-
+ .v-toolbar-title {
+   font-size: 3rem;
+   line-height: 4em;
+ }
 </style>

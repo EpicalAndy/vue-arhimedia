@@ -59,7 +59,7 @@ import { Post } from "@/models/post";
 const newsItems = news as News[];
 const dates = useDate();
 const show = ref(false);
-const post = ref(null);
+const post = ref(null) as Post;
 
 const newsByDate = computed(() => {
   return newsItems.sort((a, b) => b.date - a.date);

@@ -1,7 +1,7 @@
 <template>
   <v-app-bar
       density="comfortable"
-      image="/images/header-bg.jpg"
+      :image="getImageUrl('/images/header-bg.jpg')"
       height="200">
 <!--    <v-app-bar-title class="text-yellow text-h1">
      Архиремонт
@@ -32,6 +32,10 @@
 import { ref } from "vue";
 
 const tab = ref(null);
+
+function getImageUrl(name: string) {
+  return new URL(name, import.meta.url).href
+}
 </script>
 
 <style scoped>

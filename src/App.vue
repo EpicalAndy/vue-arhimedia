@@ -10,15 +10,12 @@ import AppArticleView from '@/views/AppArticleView.vue'
     <app-header-view></app-header-view>
 
     <v-main class="mt-0  fill-height">
-      <v-container class="w-100">
 
-        <RouterView v-slot="{ Component, route}">
-          <transition name="fade" mode="out-in">
-            <component :is="Component"></component>
-          </transition>
-        </RouterView>
-
-      </v-container>
+      <RouterView v-slot="{ Component, route}">
+        <transition name="fade" mode="out-in">
+          <component :is="Component"></component>
+        </transition>
+      </RouterView>
 
     </v-main>
 

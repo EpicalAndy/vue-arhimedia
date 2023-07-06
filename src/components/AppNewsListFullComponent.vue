@@ -34,7 +34,8 @@
                      color="blue"
                      rounded
                      @click="toggleDialog"
-                     density="compact"></v-btn>
+                     density="compact">
+              </v-btn>
             </template>
           </v-toolbar>
 
@@ -51,10 +52,10 @@
 <script setup lang="ts">
 import news from '@/demo/news.json'
 import type { News } from "@/models/news";
-import { useDate } from "@/composable/AppDateComposble";
+import { useDate } from "@/composable/AppComposble";
 import { computed, ref } from "vue";
 import AppDialogComponent from "@/components/UI/AppDialogComponent.vue";
-import { Post } from "@/models/post";
+import type { Post } from "@/models/post";
 
 const newsItems = news as News[];
 const dates = useDate();

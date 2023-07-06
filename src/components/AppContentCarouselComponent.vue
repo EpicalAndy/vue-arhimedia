@@ -38,14 +38,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { useDisplay } from "vuetify";
+import { useAdaptive } from "@/composable/AppComposble";
 
 const { items, title } = defineProps([ 'items', 'title' ]);
+const adaptive = useAdaptive();
+const isMobile = adaptive.isMobile();
 
-const isMobile = computed(() => {
-  const display = useDisplay();
-
-  return display.mobile.value;
-});
 </script>
 
 <style scoped>

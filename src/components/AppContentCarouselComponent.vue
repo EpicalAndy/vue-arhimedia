@@ -5,9 +5,12 @@
         <h2>{{ title }}</h2></v-card-text>
     </v-card-title>
     <v-card-item>
-      <v-carousel height="300">
+      <v-carousel height="300"
+                  :show-arrows="!isMobile"
+                  :cycle="isMobile"
+                  :interval="8000">
         <v-carousel-item v-for="item in items">
-          <v-sheet class="w-50 mx-auto h-auto">
+          <v-sheet :class="[isMobile ? 'w-75' : 'w-50', 'mx-auto', 'h-auto']">
             <div style="height: 20%">
               <h2>{{ item.title }} {{ }}</h2>
             </div>
@@ -33,7 +36,16 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from "vue";
+import { useDisplay } from "vuetify";
+
 const { items, title } = defineProps([ 'items', 'title' ]);
+
+const isMobile = computed(() => {
+  const display = useDisplay();
+
+  return display.mobile.value;
+});
 </script>
 
 <style scoped>

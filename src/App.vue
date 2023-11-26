@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView, useRoute } from 'vue-router'
-import AppHeaderView from '@/views/AppHeaderView.vue'
-import AppArticleView from '@/views/AppArticleView.vue'
+import AppHeaderView from '@/pages/AppHeaderView.vue'
+import AppArticleView from '@/pages/AppArticleView.vue'
 </script>
 
 <template>

@@ -6,34 +6,39 @@ const router = createRouter({
     {
       path: '/',
       name: 'main',
-      component: () => import('../views/AppMainVue.vue')
+      component: () => import('../pages/AppMainVue.vue')
     },
     {
       path: '/news',
       name: 'news',
-      component: () => import('../views/AppNewsView.vue')
+      component: () => import('../pages/AppNewsView.vue')
     },
     {
       path: '/posts',
       name: 'posts',
-      component: () => import('../views/AppArticleView.vue')
+      component: () => import('../pages/AppArticleView.vue')
     },
     {
       path: '/contacts',
       name: 'contacts',
-      component: () => import('../views/AppContactsView.vue')
+      component: () => import('../pages/AppContactsView.vue')
     },
 
 
     {
       path: '/projects',
       name: 'projects',
-      component: () => import('../views/AppProjectsView.vue')
+      component: () => import('../pages/AppProjectsView.vue')
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import('../views/AppAboutView.vue')
+      component: () => import('../pages/AppAboutView.vue')
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: () => import('../pages/AppAdminPage.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {

@@ -56,6 +56,7 @@ const tabs = [
   { value: 'article', to: '/posts', title: 'Статьи' },
   { value: 'projects', to: '/projects', title: 'Наши проекты' },
   { value: 'contacts', to: '/contacts', title: 'Контакты' },
+  { value: 'admin', to: '/admin', title: 'Админка' },
   { value: 'about', to: '/about', title: 'О проекте' }
 ];
 

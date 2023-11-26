@@ -6,6 +6,10 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+// Quill Rich Text Editor
+import { QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
 // Vuetify
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
@@ -28,5 +32,7 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(vuetify)
 app.use(router)
+
+app.component('QuillEditor', QuillEditor)
 
 app.mount('#app')
